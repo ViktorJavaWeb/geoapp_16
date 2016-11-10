@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="167" height="56" viewBox="0 0 167 56">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 25px;
+        text-anchor: middle;
+        fill: #f9f9f9;
+        font-family: Raleway;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: #a25f89;
+      }
+    </style>
+  </defs>
+  <image id="geometry03spinningShape-03" width="56" height="56" xlink:href="data:img/png;base64,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"/>
+  <text id="GeoApp" class="cls-1" x="116.853" y="36.773">Geo<tspan class="cls-2">App</tspan></text>
+</svg>
