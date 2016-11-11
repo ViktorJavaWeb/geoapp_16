@@ -274,29 +274,106 @@ function up() {
     var top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
     if(top) {
         window.scrollBy(0,-100);
-        t = setTimeout('up()',10);
+        t = setTimeout('up()',0);
+    } else clearTimeout(t);
+    return false;
+}
+
+//About      ; console.log('2arrMenu[i] - ' + arrMenu[i]);
+
+var menuHeader_navAll = document.querySelectorAll('.header_nav a');
+    var arrMenu = [];
+    for (var i = 0; i < menuHeader_navAll.length; i++) {
+        arrMenu[i] = menuHeader_navAll[i].className;
+        //console.log('arrMenu[i] - ' + arrMenu[i]);
+    }
+
+var menuHeader_nav = document.querySelector('.header_nav');
+    menuHeader_nav.addEventListener('click', function (event){
+        var menuLiTarget = event.target;
+        //console.log('menuLiTarget - ' + menuLiTarget);
+
+        for (var i = 0; i < arrMenu.length; i++){
+            console.log(menuLiTarget.classList.contains(arrMenu[i]));
+            var rr = '.team';
+            var m = document.querySelector(rr).getBoundingClientRect().top;
+
+            menuLiTarget.classList.contains(arrMenu[i]) ? down(m):{};
+        }
+
+    });
+
+
+var t;
+function down(m) {
+    if(m>0) {
+        window.scrollBy(0,100);
+        t = setTimeout('down()',0);
     } else clearTimeout(t);
     return false;
 }
 
 
 
-//About
 
+
+/*
+
+var mmm = document.querySelectorAll('.header_nav a');
+    for (var i = 0; i < mmm.length; i++){
+        mmm[i].addEventListener('click', function (event) {
+           event.preventDefault();
+            var mmmTarget = event.target;
+            var hrefTarget = '#' + mmmTarget.className;
+            console.log(hrefTarget);
+            var ter = getElementById(hrefTarget);
+
+
+        });
+}
+
+*/
+
+
+
+
+/*
+ var menuHeader_nav = document.querySelector('.header_nav');
+ menuHeader_nav.addEventListener('click', function (event) {
+ var menuLi = event.target;
+ var arrMenu = ['about', 'features', 'pricing', 'screenshots', 'contact'];
+ for (var i = 0; i < arrMenu.length; i++){
+ if (menuLi.classList.contains(arrMenu[i]) ? down(menuLi):{});
+ }
+ });
+
+
+
+ about
+ features
+ pricing
+ screenshots
+ contact
+ ---------------
+ counters
+ how
+ offer
+ download
+ tweets
+*/
+
+
+
+
+
+
+
+/*
 var features = document.querySelector('.features');
 features.addEventListener('click', function (event) {
-    var featuresTarget = event.target;
-    var r = document.querySelector('.team');
-    r.scrollIntoView();
-
-
-
+    down(event.target);
 })
-
-
-
-
-
+*/
 
 
 
